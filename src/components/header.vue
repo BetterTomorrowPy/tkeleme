@@ -9,3 +9,13 @@
     </section>
   </header>
 </template>
+
+<script>
+  var headTop = function () {
+
+  }
+  var alertTip = function () {
+
+  }
+  export {headTop, alertTip}
+</script>
