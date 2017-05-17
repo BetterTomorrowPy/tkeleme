@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>MarkDown编辑器</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h3 style="align-content: center; background-color: cornsilk">markdown文本编辑器</h3>
+  </header>
+  <section>
+    <textarea :value="input" @input="update"></textarea>
+    <div v-html="compiledMarkdown"></div>
+  </section>
+  <footer>Vue demo.</footer>
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+  <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script src="https://unpkg.com/vue@2.3.3"></script>
+  <script>
+    var vm = new Vue({
+      el: 'section',
+      data: {
+        input: '### 在这里输入文本 。。。'
+      },
+      computed: {
+        compiledMarkdown: function () {
+          return marked(this.input, {sanitize: true})
+        }
+      },
+      methods: {
+        update: _.debounce(function (e) {
+          this.input = e.target.value
+        }, 300)
+      }
+    })
+  </script>
+</body>
+</html>

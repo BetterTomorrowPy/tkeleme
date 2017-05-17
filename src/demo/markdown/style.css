@@ -1,0 +1,33 @@
+html, body, section {
+  margin: 0rem;
+  height: 100%;
+  font-family: "Arial Unicode MS";
+  color: #333;
+}
+
+textarea, section div {
+  display: inline-block;
+  width: 49%;
+  height: 100%;
+  background-color: lightyellow;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+textarea {
+  border: none;
+  border-right: 1px solid #cccccc;
+  resize: none;
+  outline: none;
+  background-color: lightgoldenrodyellow;
+  font-size: 14px;
+  font-family: "Arial Black";
+  padding: 20px;
+}
+
+code {
+  color: #f66;
+}
