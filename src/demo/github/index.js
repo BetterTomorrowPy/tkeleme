@@ -10,9 +10,9 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=15&sha='
 var vm = new Vue({
   el: '#demo',
   data: {
-    branches: ['master', 'dev'],
+    branches: ['master', 'weex', 'typings-refactor'],
     currentBranch: 'master',
-    commits: null
+    commits: []
   },
   filters: {
     // 过滤换行

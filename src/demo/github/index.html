@@ -16,10 +16,11 @@
            :id="branch"
            :value="branch"
            name="branch"
-           v-model="currentBranch">
+           v-model="currentBranch"
+           @click="fetchFetchData">
     <label :for="branch">{{ branch }}</label>
   </template>
-  <p>vuejs/vue@{{ currentBranch }}</p>
+  <p>Vue.js分支@{{ currentBranch }}</p>
   <ul>
     <li v-for="record in commits">
       <a :href="record.html_url" target="_blank" class="commit">{{ record.sha.slice(0, 7) }}</a>
