@@ -1,0 +1,19 @@
+
+header, section {
+  font-family: "Berlin Sans FB";
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: #f66;
+}
+
+li {
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+.author .date {
+  font-weight: bold;
+}
