@@ -29,12 +29,12 @@ var vm = new Vue({
     // use source ajax
     fetchData: function () {
       let xhr = new XMLHttpRequest();
-      let that = this;
+      // let that = this;
       console.log(this.currentBranch)
-      xhr.open('GET', apiURL + that.currentBranch);
+      xhr.open('GET', apiURL + this.currentBranch);
       xhr.onload = function () {
-        that.commits = JSON.parse(xhr.responseText);
-        console.log(that.commits[0].html_url)
+        this.commits = JSON.parse(xhr.responseText);
+        console.log(this.commits[0].html_url)
       };
       xhr.send()
     },
@@ -47,10 +47,10 @@ var vm = new Vue({
           'Content-Type': 'application/json'
         }
       }
-      let that = this;
-      let response = await fetch(apiURL + that.currentBranch, request);
+      // let that = this;
+      let response = await fetch(apiURL + this.currentBranch, request);
       let responseJson = await response.json();
-      that.commits = responseJson
+      this.commits = responseJson
       console.log(responseJson)
     }
   },
