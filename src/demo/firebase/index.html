@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js firebase.</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--Vue-->
+  <script src="https://unpkg.com/vue@2.3.3"></script>
+  <!--VueFire-->
+  <script src="https://unpkg.com/vuefire@1.3.0"></script>
+  <!--FireBase-->
+  <script src="https://unpkg.com/firebase@4.1.0"></script>
+</head>
+<body>
+  <div id="app">
+    <ul is="transition-group">
+      <li v-for="user in users" class="user" :key="user['.key']">
+        <span>{{ user.name }} - {{ user.email }}</span>
+        <button @click="removeUser(user)">remove</button>
+      </li>
+    </ul>
+
+    <form id="form" @submit.prevent="addUser">
+      <input v-model="newUser.name">
+      <input v-model="newUser.email">
+      <input type="submit" value="Add User">
+    </form>
+
+    <ul class="errors">
+      <li v-show="!validation.name">Name cannot be empty.</li>
+      <li v-show="!validation.email">Email invalid.</li>
+    </ul>
+  </div>
+<!--&lt;!&ndash;Vue&ndash;&gt;-->
+<!--<script src="https://unpkg.com/vue@2.3.3"></script>-->
+<!--&lt;!&ndash;VueFire&ndash;&gt;-->
+<!--<script src="https://unpkg.com/vuefire@1.3.0"></script>-->
+<!--&lt;!&ndash;FireBase&ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>-->
+<script src="app.js"></script>
+</body>
+</html>

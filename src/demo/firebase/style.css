@@ -1,0 +1,32 @@
+body {
+  font-family: "Helvetica Neue";
+}
+
+ul {
+  padding: 0;
+}
+
+.user {
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;
+  border-top: 1px solid #eeeeee;
+  overflow: hidden;
+  transition: all .25s ease;
+}
+
+.user:last-child {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.v-enter, .v-leave-to {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.errors {
+  color: #ff0000;
+}
